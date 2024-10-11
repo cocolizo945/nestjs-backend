@@ -19,7 +19,7 @@ dotenv.config();
     database: process.env.DBNAME,
     schema: process.env.DBSCHEME,
     entities: [__dirname + '/**/*.entity{.ts,.js}'],
-    synchronize: true
+    synchronize: false
   }),
     UsersModule],
   controllers: [AppController],
