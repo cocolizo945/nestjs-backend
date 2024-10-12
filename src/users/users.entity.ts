@@ -1,4 +1,5 @@
-import { Entity,Column , PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Entity,Column , PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Task } from '../tasks/task.entity';
 
 @Entity()
 export class User {
@@ -12,6 +13,7 @@ export class User {
     @Column({type: "text"})
     pass: string
 
-    @Column({type: "text"})
-    token: string
+
+    @OneToMany(() => Task, (task) => task.belongs_to) // Relación uno a muchos con tareas
+    tasks: Task[];
 }
