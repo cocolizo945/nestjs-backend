@@ -13,7 +13,8 @@ SECRET =
 ```bash
 $ docker compose up --build 
 
-# en caso de que se levante sin conectar a la consola de docker
+#or 
+
 $ docker compose up -d --build 
 ```
 use pgadmin to create scheme inside the database
@@ -21,7 +22,7 @@ use pgadmin to create scheme inside the database
 ## Docker Comandos para migraciones
 
 ```bash
-# Acceder al contenedor de la aplicación
+
 docker exec -it nestjs-app bash
 
 
@@ -66,3 +67,86 @@ $ npm run migration:revert
 ```
 
 
+## Comandos para migraciones
+{/users, GET}
+```bash
+{
+
+}
+```
+
+{/users/:id, GET}
+```bash
+{
+
+}
+```
+
+{/users, POST}
+```bash
+{
+"username": string
+"pass": string
+}
+```
+
+{/users/:id, DELETE}
+token needed
+```bash
+{
+
+}
+```
+
+{/tasks/all, GET}
+token needed
+```bash
+{
+
+}
+```
+
+{/tasks/filter/:belongsToId, GET}
+token needed
+```bash
+{
+
+}
+```
+
+{/tasks/add, POST}
+token needed
+```bash
+{
+    task_name: string;            
+    task_description: string;     
+    belongs_to: number;
+
+}
+```
+
+{/tasks/delete/:id, DELETE}
+token needed
+```bash
+{
+
+}
+```
+
+{/tasks/edit/:id, PATCH}
+token needed
+```bash
+{
+    task_name?: string;            
+    task_description?: string;     
+    belongs_to?: number;      
+}
+```
+
+{/auth/login, POST}
+```bash
+{
+ "username":"",
+  "password":""
+}
+```
